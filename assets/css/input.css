@@ -1,0 +1,94 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Spline+Sans:wght@300..700&display=swap');
+@import url('../../assets/fonts/icon-font/remix/remixicon.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html{
+        @apply font-publicSans text-gray;
+    }
+}
+@layer components{
+    .flex-start{
+        @apply flex justify-start items-center;
+    }
+    .flex-center{
+        @apply flex justify-center items-center;
+    }
+    .flex-between-center{
+        @apply flex justify-between items-center;
+    }
+    .position-center{
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform
+    }
+    .position-x-center{
+        @apply absolute left-1/2 -translate-x-1/2 transform
+    }
+    .position-y-center{
+        @apply absolute top-1/2 -translate-y-1/2 transform
+    }
+
+    .section-heading{
+        @apply text-heading xl:text-42 lg:text-4xl sm:text-3xl text-2xl font-bold xl:leading-[52px] lg:leading-[48px] leading-10 sm:mb-6 mb-3 font-publicSans;
+    }
+    .section-para{
+        @apply xl:text-lg font-splineSans;
+    }
+    .card{
+        @apply rounded-20 bg-white;
+    }
+    .insturctor-card{
+        @apply lg:col-span-4 sm:col-span-6 col-span-full card p-6 pb-60 relative;
+    }
+
+    /* nav */
+    .dropdown-item{
+        @apply hover:text-primary duration-200 relative;
+    }
+    .dropdown-menu{
+        @apply text-base text-gray *:px-4 *:py-2 absolute z-40 bg-white border-l-4 border-primary w-[200px] shadow-courseCard mt-2 rounded-md divide-y -translate-y-3 group-hover/dropdown:translate-y-0 invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 duration-500;
+    }
+
+    /* buttons and badges */
+    .btn{
+        @apply inline-flex font-medium font-splineSans px-6 py-4 rounded-full leading-none bg-primary [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-transparent text-white [&.strock]:text-primary [&.strock]:hover:text-white hover:text-primary border border-transparent [&.strock]:border-primary hover:border-primary duration-300;
+    }
+    .before-icon-btn{
+        @apply before:font-remix before:text-2xl flex items-center gap-2 text-lg font-medium font-splineSans bg-secondary-100 [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-primary rounded-10 text-white px-6 py-3 [&.strock]:border [&.strock]:border-[#2B2B55] duration-200;
+    }
+    .tab-btn{
+        @apply [&.active]:bg-primary [&.active]:text-white [&.active]:border-transparent text-[#717880] hover:text-white px-4 py-2.5 rounded-full border border-[#D0D2D4] hover:border-transparent hover:bg-primary leading-none flex-center items-center gap-2 duration-200;
+    }
+    .badge{
+        @apply inline-flex px-3 py-2 leading-none rounded-full bg-primary text-white text-xs;
+    }
+    .list-tick-circle{
+        @apply flex items-center gap-2.5 before:mt-1 before:content-[url('../../assets/images/icons/tick_white.png')] [&.list-primary]:before:content-[url('../../assets/images/icons/tick_primary.png')];
+    }
+
+    /* blog  */
+    .blog-thumb{
+        @apply overflow-hidden rounded-t-20 relative z-10 after:absolute after:z-50 after:top-0 after:w-full after:h-full after:bg-blog_overlay;
+    }
+    .blog-title{
+        @apply mt-4 xl:text-22 text-lg font-semibold text-heading xl:leading-8 line-clamp-2 hover:text-primary duration-200;
+    }
+    /* Course  */
+    .course-title{
+        @apply text-heading xl:text-22 lg:text-lg text-xl font-semibold line-clamp-2 hover:text-primary duration-200;
+    }
+
+     /* accordion */
+    .accordion{
+        @apply relative before:size-2 before:bg-primary before:rounded-full before:position-y-center before:left-0 after:content-['\ea11'] after:position-y-center after:right-0 after:font-remix pl-5 xl:text-xl text-lg text-heading cursor-pointer xl:py-4 py-2.5 [&.active]:after:content-['\ee57'] [&.active]:after:rotate-180 [&.active]:after:text-primary select-none after:duration-200;
+    }
+    .accordionpanel{
+        @apply overflow-hidden max-h-0 duration-200 ease-in-out;
+    }
+}
+@layer utilities{
+
+}
