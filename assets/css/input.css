@@ -44,6 +44,14 @@
         @apply lg:col-span-4 sm:col-span-6 col-span-full card p-6 pb-60 relative;
     }
 
+    /* nav */
+    .dropdown-item{
+        @apply hover:text-primary duration-200 relative;
+    }
+    .dropdown-menu{
+        @apply text-base text-gray *:px-4 *:py-2 absolute z-40 bg-white border-l-4 border-primary w-[200px] shadow-courseCard mt-2 rounded-md divide-y -translate-y-3 group-hover/dropdown:translate-y-0 invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 duration-500;
+    }
+
     /* buttons and badges */
     .btn{
         @apply inline-flex font-medium font-splineSans px-6 py-4 rounded-full leading-none bg-primary [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-transparent text-white [&.strock]:text-primary [&.strock]:hover:text-white hover:text-primary border border-transparent [&.strock]:border-primary hover:border-primary duration-300;
