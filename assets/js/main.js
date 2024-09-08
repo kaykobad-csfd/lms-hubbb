@@ -1,3 +1,60 @@
+/* toggle search */
+  var searchIcon = document.getElementById('searchIcon');
+  var closeIcon = document.getElementById('closeIcon');
+  var searchInput = document.getElementById('searchInput');
+  
+  function toggleSearch() {
+    searchIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    searchInput.classList.toggle('opacity-0');
+    searchInput.classList.toggle('invisible');
+    searchInput.classList.toggle('translate-y-5');
+  }
+  
+  /* toggle Drawer */
+  var mobileNav = document.getElementById('mobile-nav');
+  var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  
+  function toggleMobileNav() {
+    mobileNav.classList.toggle('translate-x-0');
+    mobileNavOverlay.classList.toggle('opacity-80');
+    mobileNavOverlay.classList.toggle('invisible');
+  }
+
+  /* mobile nav dropdown item */
+  document.querySelectorAll('.sm-dropdown-item > a').forEach(nav => {
+    nav.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      
+      const navPanel = this.nextElementSibling;
+      this.classList.toggle('active');
+      
+      // Toggle maxHeight for the panel
+      if (navPanel.style.maxHeight) {
+        navPanel.style.maxHeight = null;
+      } else {
+        navPanel.style.maxHeight = `${navPanel.scrollHeight}px`;
+        
+        // Close other panels
+        document.querySelectorAll('.sm-dropdown-item .navPanel').forEach(panel => {
+          if (panel !== navPanel) {
+            panel.style.maxHeight = null;
+            panel.previousElementSibling.classList.remove('active');
+          }
+        });
+      }
+    });
+    
+    // Set initial state if accordion has 'active' class
+    const accordionPanel = nav.nextElementSibling;
+    if (nav.classList.contains('active')) {
+      accordionPanel.style.maxHeight = `${accordionPanel.scrollHeight}px`;
+    } else {
+      accordionPanel.style.maxHeight = null;
+    }
+  });
+  
+
 // FAQ Accordion
 document.querySelectorAll('.accordion').forEach(accordion => {
     accordion.addEventListener('click', function () {
@@ -59,13 +116,12 @@ document.querySelectorAll('.accordion').forEach(accordion => {
   /** Swiper Slide **/
   // Blog slide
   var swiper = new Swiper(".instructor", {
-    speed: 3000,
+    speed: 1500,
     spaceBetween: 30,
     pagination: {
       el: ".instructor-pagination",
       clickable: true,
     },
-    speed: 2000,
     breakpoints: {
       320: { slidesPerView: 1, spaceBetween: 20 },
       480: { slidesPerView: 2, spaceBetween: 30 },
@@ -79,7 +135,7 @@ document.querySelectorAll('.accordion').forEach(accordion => {
   });
   // Blog slide
   var swiper = new Swiper(".blog-slider", {
-    speed: 3000,
+    speed: 1500,
     spaceBetween: 30,
     pagination: {
       el: ".blog-pagination",

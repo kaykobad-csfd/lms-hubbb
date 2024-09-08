@@ -49,7 +49,13 @@
         @apply hover:text-primary duration-200 relative;
     }
     .dropdown-menu{
-        @apply text-base text-gray *:px-4 *:py-2 absolute z-40 bg-white border-l-4 border-primary w-[200px] shadow-courseCard mt-2 rounded-md divide-y -translate-y-3 group-hover/dropdown:translate-y-0 invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 duration-500;
+        @apply text-base text-gray *:px-4 *:py-2 absolute z-40 bg-white border-l-4 border-primary w-[200px] shadow-lg mt-2 rounded-md divide-y -translate-y-3 group-hover/dropdown:translate-y-0 invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 duration-500;
+    }
+    .nav-drop-icon{
+        @apply relative before:position-y-center before:right-0 before:font-remix before:content-['\ea4e'];
+    }
+    .navPanel{
+        @apply max-h-0 overflow-hidden transition-all duration-300;
     }
 
     /* buttons and badges */
@@ -57,10 +63,13 @@
         @apply inline-flex font-medium font-splineSans px-6 py-4 rounded-full leading-none bg-primary [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-transparent text-white [&.strock]:text-primary [&.strock]:hover:text-white hover:text-primary border border-transparent [&.strock]:border-primary hover:border-primary duration-300;
     }
     .before-icon-btn{
-        @apply before:font-remix before:text-2xl flex items-center gap-2 text-lg font-medium font-splineSans bg-secondary-100 [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-primary rounded-10 text-white px-6 py-3 [&.strock]:border [&.strock]:border-[#2B2B55] duration-200;
+        @apply before:font-remix before:text-2xl flex items-center justify-center gap-2 text-lg font-medium font-splineSans bg-secondary-100 [&.strock]:bg-transparent [&.strock]:hover:bg-primary hover:bg-primary rounded-10 text-white px-6 py-3 [&.strock]:border [&.strock]:border-[#2B2B55] duration-200;
     }
     .tab-btn{
         @apply [&.active]:bg-primary [&.active]:text-white [&.active]:border-transparent text-[#717880] hover:text-white px-4 py-2.5 rounded-full border border-[#D0D2D4] hover:border-transparent hover:bg-primary leading-none flex-center items-center gap-2 duration-200;
+    }
+    .slide-btn{
+        @apply sm:size-16 size-12 bg-white [&.swiper-button-disabled]:!bg-gray-300 hover:bg-primary-900 hover:text-secondary-100 [&.swiper-button-disabled]:text-white rounded-full absolute xl:top-1/2 transform xl:-translate-y-1/2 z-30 xl:bottom-auto sm:-bottom-4 -bottom-2.5 text-2xl duration-200;
     }
     .badge{
         @apply inline-flex px-3 py-2 leading-none rounded-full bg-primary text-white text-xs;

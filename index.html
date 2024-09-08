@@ -12,7 +12,7 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/output.css">
     <!-- CSS Vendor -->
-    <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css">
 </head>
 <body>
     <!-- Top Notify -->
@@ -63,9 +63,9 @@
                 </ul>
             </div>
         </div>
-     </div>
+    </div>
     <!-- header -->
-     <header class="relative font-splineSans py-6 px-4">
+    <header class="relative font-splineSans py-6 px-4">
         <nav>
             <div class="flex-between-center max-w-[1734px] mx-auto">
                 <!-- logo -->
@@ -79,17 +79,29 @@
                             <label class="font-remix pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2 text-2xl">
                                 <i class="ri-arrow-drop-down-line text-inherit"></i>
                             </label>
-                            <select class="border focus:outline-none rounded-full cursor-pointer pl-4 pr-3 leading-5 py-3 appearance-none bg-transparent select-none">
+                            <select class="w-36 border focus:outline-none rounded-full cursor-pointer pl-4 pr-3 leading-5 py-3 appearance-none bg-transparent select-none">
                                 <option disabled selected>Categories</option>
-                                <option value="Web Developer">Web Developer</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                                <option value="Data Science">Data Science</option>
+                                <option value="Web Developer">Developer</option>
+                                <option value="Digital Marketing">Marketing</option>
+                                <option value="Data Science">Design</option>
                             </select>
                         </div>
-                        <button class="size-12 rounded-full border hover:text-primary duration-200">
-                            <i class="ri-search-line text-inherit"></i>
-                            <span class="sr-only">Search</span>
-                        </button>
+                        <div class="relative">
+                            <!-- Search button -->
+                            <button onclick="toggleSearch()" class="w-12 h-12 rounded-full border hover:text-primary transition duration-200">
+                                <span id="searchIcon" class="block text-lg">
+                                    <i class="ri-search-line text-inherit"></i>
+                                </span>
+                                <span id="closeIcon" class="hidden text-lg">
+                                    <i class="ri-close-line text-inherit"></i>
+                                </span>
+                                <span class="sr-only">Search</span>
+                            </button>
+                            <!-- search input -->
+                            <form id="searchInput" class="absolute right-0 z-40 p-1 rounded-lg bg-white opacity-0 invisible -translate-y-5 transition-all duration-300">
+                                <input type="search" required placeholder="Search" class="placeholder-gray-400 border rounded-lg px-3 py-2.5 focus:outline-none">
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <!-- main nav menu -->
@@ -102,7 +114,9 @@
                             <a href="#" class="hover:text-primary duration-200">Courses</a>
                         </li>
                         <li class="dropdown-item group/dropdown">
-                            <a href="#">Pages</a>
+                            <a href="#">Pages
+                                <i class="ri-arrow-down-s-line text-inherit"></i>
+                            </a>
                             <ul class="dropdown-menu ">
                                 <li>
                                     <a href="#" class="list-item hover:text-primary duration-200">Course Detail</a>
@@ -152,15 +166,94 @@
                         </a>
                     </div>
                     <a href="#" class="btn btn-primary sm:block hidden">Join for Free!</a>
-                    <button class="text-2xl lg:hidden block">
+                    <button onclick="toggleMobileNav()" class="text-2xl lg:hidden block">
                         <i class="ri-menu-2-line text-inherit"></i>
                     </button>
                   </div>
             </div>
         </nav>
-     </header>
+    </header>
+    <!-- mobile menu -->
+    <div class="relative">
+        <!-- drawer -->
+        <div id="mobile-nav" class="fixed z-[99999] top-0 left-0 sm:w-3/6 w-5/6 h-screen -translate-x-[500px] bg-white flex flex-col duration-500 lg:hidden">
+            <!-- drawer top -->
+            <div class="flex-between-center p-3 shadow-sm">
+                <a href="#" class="w-3/6">
+                    <img src="assets/images/logo/logo-text.svg" alt="logo" class="w-full">
+                </a>
+                <button onclick="toggleMobileNav()" class="size-10 flex-center text-xl rounded-xl border hover:border-transparent hover:bg-primary hover:text-white duration-200">
+                    <i class="ri-close-line text-inherit"></i>
+                </button>
+            </div>
+            <!-- menus -->
+            <div class="px-3 mb-5 pt-5 overflow-y-auto">
+                <ul class="divide-y text-lg font-medium">
+                    <li>
+                        <a href="#" class="list-item py-2 px-3 hover:bg-primary-200 duration-200">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-item py-2 px-3 hover:bg-primary-200 duration-200">Courses</a>
+                    </li>
+                    <li class="sm-dropdown-item">
+                        <a href="#" class="list-item py-2 px-3 nav-drop-icon hover:bg-primary-200 duration-200">Pages</a>
+                        <ul class="navPanel panel px-5 text-base">
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Course Detail</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Course Bundle</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Instructor</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Instructor Detail</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Blog Detail</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Course Video</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Course Organaization</a>
+                            </li>
+                            <li>
+                                <a href="#" class="py-1.5 list-item hover:text-primary duration-200">Organaization Detail</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="list-item py-2 px-3 hover:bg-primary-200 duration-200">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-item py-2 px-3 hover:bg-primary-200 duration-200">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- drawer footer -->
+            <div class="mt-auto p-3">
+                <div class="grid grid-cols-3 gap-2 mb-5">
+                    <div class="overflow-hidden rounded-md">
+                        <img src="assets/images/top-courses/image-1.png" alt="" class="hover:scale-110 duration-200">
+                    </div>
+                    <div class="overflow-hidden rounded-md">
+                        <img src="assets/images/top-courses/image-2.png" alt="" class="hover:scale-110 duration-200">
+                    </div>
+                    <div class="overflow-hidden rounded-md">
+                        <img src="assets/images/top-courses/image-3.png" alt="" class="hover:scale-110 duration-200">
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Explore Our <span class="text-secondary">Courses</span></h3>
+                <p class="text-sm">Embark on a learning journey with our top-rated courses, designed to equip you with the skills you need to excel. Whether advance.</p>
+            </div>
+        </div>
+        <!-- overlay -->
+        <div onclick="toggleMobileNav()" id="mobile-nav-overlay" class="fixed z-50 top-0 w-full h-screen bg-black opacity-0 invisible duration-300 lg:hidden"></div>
+    </div>
      <!-- start main -->
-      <main>
+    <main>
         <!-- hero area -->
         <div class="bg-main_hero bg-100% bg-no-repeat font-splineSans relative pt-60 pb-20">
             <div class="container grid grid-cols-12 items-center">
@@ -179,7 +272,7 @@
                 </div>
                 <div class="sm:col-span-5 col-span-full relative z-20 sm:mt-0 mt-8">
                     <!-- main image -->
-                    <img src="assets/images/hero/student.png" alt="student" class="xl:translate-x-20 lg:translate-x-4 translate-x-4">
+                    <img src="assets/images/hero/student.png" alt="student" class="xl:translate-x-20 1280-1480:translate-x-4 lg:translate-x-4 translate-x-4">
                     <!-- position images -->
                     <img src="assets/images/hero/element-1.png" alt="element" class="absolute -z-10 xl:left-6 xl:top-[72px] top-8">
                     <img src="assets/images/hero/happy-student.png" alt="element" class="absolute left-0 xl:top-72 top-56 xl:w-auto w-3/6 lg:block hidden">
@@ -188,10 +281,10 @@
             <!-- position elements -->
             <div class="size-16 rounded-full bg-white bg-opacity-60 absolute xl:left-44 left-24 xl:top-16 top-12 lg:block hidden"></div>
             <img src="assets/images/hero/triangle.png" alt="LMS-HUB" class="absolute xl:top-20 top-16 xl:left-52 left-32 lg:block hidden">
-            <img src="assets/images/hero/element-left-bottom.png" alt="LMS-HUB" class="absolute left-60 bottom-40 xl:block hidden">
+            <img src="assets/images/hero/element-left-bottom.png" alt="LMS-HUB" class="absolute left-60 bottom-28 xl:block hidden">
             <img src="assets/images/hero/element-right.png" alt="LMS-HUB" class="position-y-center right-0 xl:block hidden">
         </div>
-         <!-- counter -->
+        <!-- counter -->
         <div class="container">
             <div class="sticky z-40 bg-counter_bg bg-primary rounded-2xl -translate-y-[90px] font-splineSans bg-blend-soft-light">
                 <div class="flex justify-center sm:flex-nowrap flex-wrap sm:gap-0 gap-10 text-center sm:divide-x divide-[#D8F1E7] divide-opacity-30 xl:*:px-[104px] lg:*:px-16 sm:*:px-6 first:*:pl-0 last:*:pr-0 lg:py-10 py-6">
@@ -230,8 +323,8 @@
             <div class="grid sm:grid-cols-12 gap-30 sm:mt-60 mt-30">
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-1.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-1.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Web Development</h4>
@@ -240,8 +333,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-2.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-2.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Digital Marketing</h4>
@@ -250,8 +343,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-3.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-3.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">UI/UX Design</h4>
@@ -260,8 +353,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-4.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-4.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Data Science</h4>
@@ -270,8 +363,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-5.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-5.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Graphic Design</h4>
@@ -280,8 +373,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-6.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-6.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Project Management</h4>
@@ -290,8 +383,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-7.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-7.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Business Analytics</h4>
@@ -300,8 +393,8 @@
                 </div>
                 <!-- single item -->
                 <div class="xl:col-span-3 lg:col-span-4 sm:col-span-6 col-span-full bg-primary-200 rounded-2xl flex-center flex-col text-center py-8 group/category">
-                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary duration-200">
-                        <img src="assets/images/icons/categories/category-8.png" alt="development" class="group-hover/category:brightness-[50] duration-200">
+                    <div class="flex-center size-20 rounded-full bg-white group-hover/category:bg-primary transition-all duration-500">
+                        <img src="assets/images/icons/categories/category-8.png" alt="development" class="group-hover/category:brightness-[50] duration-300">
                     </div>
                     <div class="mt-6">
                         <h4 class="text-xl font-medium line-clamp-1 text-secondary-200 mb-1">Cyber security Fund</h4>
@@ -317,10 +410,10 @@
                     <!-- main image -->
                     <img src="assets/images/grow-skill/grow-main.png" alt="grow-skill">
                     <!-- position images -->
-                     <div class="flex-center flex-col text-center rounded-full xl:size-[190px] lg:size-32 sm:size-36 size-24 bg-white absolute xl:top-16 lg:top-10 sm:top-28 top-16 xl:-right-2 lg:right-2 right-0 xl:text-lg text-sm text-heading">
+                        <div class="flex-center flex-col text-center rounded-full xl:size-[190px] lg:size-32 sm:size-36 size-24 bg-white absolute xl:top-16 lg:top-10 sm:top-28 top-16 xl:-right-2 lg:right-2 right-0 xl:text-lg text-sm text-heading">
                         <div class="text-secondary xl:text-6xl text-4xl font-bold">+14</div>
                         <span class="sm:block hidden">Years Experience</span>
-                     </div>
+                        </div>
                     <img src="assets/images/grow-skill/studens-card.png" alt="grow-skill" class="absolute -bottom-9 xl:w-auto w-1/2">
                 </div>
                 <div class="lg:col-span-6 col-span-full lg:order-none order-first xl:pl-20 lg:pl-8">
@@ -333,7 +426,7 @@
                         </h1>
                         <p class="section-para lg:pr-8 md:pr-64">Unlock your potential with flexible learning opportunities that fit into your schedule. Whether you're at s you to grow skills.</p>
                     </div>
-                    <ul class="grid sm:grid-cols-2 lg:gap-3 gap-2 xl:text-lg sm:text-base text-sm text-heading font-medium font-splineSans lg:even:*:-ml-10 sm:even:*:-ml-20 leading-none lg:mt-8 mt-5">
+                    <ul class="md:w-auto grid sm:grid-cols-2 lg:gap-3 gap-2 xl:text-lg sm:text-base text-sm text-heading font-medium font-splineSans lg:even:*:-ml-10 sm:even:*:-ml-20 leading-none lg:mt-8 mt-5">
                         <li class="list-tick-circle">Flexible Learning</li>
                         <li class="list-tick-circle">Personalized Learning</li>
                         <li class="list-tick-circle">Expert Instructors</li>
@@ -349,9 +442,9 @@
                 </div>
             </div>
             <!-- position element -->
-             <img src="assets/images/grow-skill/dot-blue.png" alt="dot" class="absolute -z-10 bottom-[300px] left-[90px] xl:block hidden">
-             <img src="assets/images/grow-skill/dot-green.png" alt="dot" class="absolute -z-10 top-[140px] right-[120px] xl:block hidden">
-             <img src="assets/images/grow-skill/element-circle.png" alt="dot" class="absolute -z-10 bottom-0 right-0">
+                <img src="assets/images/grow-skill/dot-blue.png" alt="dot" class="absolute -z-10 bottom-[300px] left-[90px] xl:block hidden">
+                <img src="assets/images/grow-skill/dot-green.png" alt="dot" class="absolute -z-10 top-[140px] right-[120px] xl:block hidden">
+                <img src="assets/images/grow-skill/element-circle.png" alt="dot" class="absolute -z-10 bottom-0 right-0">
         </div>
         <!-- Top Courses -->
         <div class="container sm:py-130 py-24">
@@ -686,13 +779,13 @@
                 <div class="md:col-span-6 col-span-full py-10">
                     <h2 class="font-semibold xl:text-44 md:text-4xl text-2xl xl:leading-[60px] lg:sleading-[48px] text-white md:mb-11 mb-6">Be the First to Know About Special Offers!</h2>
                     <form>
-                        <label class="relative bg-white rounded-full">
-                            <input type="email" placeholder="Enter Your Email" required class="lg:w-4/6 w-full pl-30 pr-44 py-5 placeholder:text-gray-800 rounded-full focus:outline-none">
+                        <div class="relative bg-white rounded-full inline-block">
+                            <input type="email" placeholder="Enter Your Email" required class="w-full pl-30 pr-40 py-5 placeholder:text-gray-800 rounded-full focus:outline-none">
                             <button type="submit" class="btn bg-secondary hover:bg-secondary hover:bg-opacity-90 hover:text-white hover:border-secondary gap-2 position-y-center right-2">
                                 Subscribe
                                 <i class="ri-arrow-right-line"></i>
                             </button>
-                        </label>
+                        </div>
                     </form>
                 </div>
                 <div class="md:col-span-6 relative pl-32 md:block hidden">
@@ -705,11 +798,11 @@
                 </div>
             </div>
             <!-- position items -->
-             <img src="assets/images/cta/subtract-right.png" alt="LMS-HUB" class="absolute -z-10 top-0 right-0 mix-blend-hard-light">
-             <img src="assets/images/cta/subtract-left.png" alt="LMS-HUB" class="absolute -z-10 bottom-0 left-0 mix-blend-soft-light">
-             <img src="assets/images/cta/bottom-right.png" alt="LMS-HUB" class="absolute -z-10 bottom-0 right-0 opacity-40">
-             <img src="assets/images/cta/elmt-left-top.png" alt="LMS-HUB" class="absolute -z-10 top-0 left-0 lg:block hidden">
-             <img src="assets/images/cta/squer.png" alt="LMS-HUB" class="position-x-center -z-10 top-0 lg:block hidden">
+                <img src="assets/images/cta/subtract-right.png" alt="LMS-HUB" class="absolute -z-10 top-0 right-0 mix-blend-hard-light">
+                <img src="assets/images/cta/subtract-left.png" alt="LMS-HUB" class="absolute -z-10 bottom-0 left-0 mix-blend-soft-light">
+                <img src="assets/images/cta/bottom-right.png" alt="LMS-HUB" class="absolute -z-10 bottom-0 right-0 opacity-40">
+                <img src="assets/images/cta/elmt-left-top.png" alt="LMS-HUB" class="absolute -z-10 top-0 left-0 lg:block hidden">
+                <img src="assets/images/cta/squer.png" alt="LMS-HUB" class="position-x-center -z-10 top-0 lg:block hidden">
         </div>
         <!-- Instructor -->
         <div class="bg-instractor_gradint bg-no-repeat bg-100%">
@@ -983,11 +1076,11 @@
                         <div class="instructor-pagination text-center xl:mt-10 mt-16 *:!size-3 *:border-[1.5px] *:border-primary *:!bg-primary"></div>
                     </div>
                     <!-- slide buttons -->
-                    <div>
-                        <button class="prev-instructor sm:size-16 size-12 bg-white [&.swiper-button-disabled]:!bg-gray-300 hover:bg-primary-900 hover:text-secondary-100 [&.swiper-button-disabled]:text-white rounded-full absolute xl:top-1/2 transform xl:-translate-y-1/2 z-30 xl:-left-20 md:left-32 left-0 xl:bottom-auto sm:-bottom-4 -bottom-2.5 text-2xl duration-200">
+                    <div class="1280-1480:hidden">
+                        <button class="prev-instructor slide-btn xl:-left-20 md:left-32 left-0">
                             <i class="ri-arrow-left-line text-inherit"></i>
                         </button>
-                        <button class="next-instructor sm:size-16 size-12 bg-white [&.swiper-button-disabled]:!bg-gray-300 hover:bg-primary-900 hover:text-secondary-100 [&.swiper-button-disabled]:text-white rounded-full absolute xl:top-1/2 transform xl:-translate-y-1/2 z-30 xl:-right-20 md:right-32 right-0 xl:bottom-auto sm:-bottom-4 -bottom-2.5 text-2xl duration-200">
+                        <button class="next-instructor slide-btn xl:-right-20 md:right-32 right-0">
                             <i class="ri-arrow-right-line text-inherit"></i>
                         </button>
                     </div>
@@ -1100,40 +1193,40 @@
                         chieve your professional goals with our online certification programs.
                     </div>
                 </div>
-                <div class="grid sm:grid-cols-12 sm:gap-x-30 gap-y-30 sm:position-x-center xl:bottom-auto -bottom-64 w-full sm:mt-60 mt-30">
+                <div class="container sm:px-4 px-0 grid sm:grid-cols-12 sm:gap-x-30 gap-y-30 sm:position-x-center xl:bottom-auto -bottom-64 w-full sm:mt-60 mt-30">
                     <!-- single item -->
-                    <div class="col-span-6 bg-join_user_bg bg-100% bg-no-repeat bg-secondary rounded-3xl flex xl:flex-row flex-row-reverse items-center relative z-10 overflow-hidden !pr-5 xl:pl-0 pl-6">
+                    <div class="sm:col-span-6 bg-join_user_bg bg-100% bg-no-repeat bg-secondary rounded-3xl flex xl:flex-row flex-row-reverse items-center relative z-10 overflow-hidden !pr-5 xl:pl-0 pl-6">
                         <!-- main image -->
                         <div class="w-4/6 xl:mb-0 -mb-6 lg:block hidden">
                             <img src="assets/images/join-us/img-1.png" alt="instructor" class="w-full">
                         </div>
-                        <div class="text-white py-8">
-                            <h5 class="xl:text-32 md:text-28 text-2xl font-medium font-splineSans mb-2">Become A Instructors</h5>
+                        <div class="text-white xl:py-8 py-5">
+                            <h5 class="xl:text-32 md:text-2xl text-22 font-medium font-splineSans mb-2">Become A Instructors</h5>
                             <p>Elevate your learning experience by training with industry knowledge.</p>
                             <a href="#" class="btn bg-white text-secondary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
                                 <i class="ri-arrow-right-line text-inherit"></i>
                             </a>
                         </div>
                         <!-- position elements -->
-                         <img src="assets/images/join-us/element-1.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
-                         <img src="assets/images/join-us/element-3.png" alt="element-2" class="absolute -z-10 top-0 right-0">
+                            <img src="assets/images/join-us/element-1.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
+                            <img src="assets/images/join-us/element-3.png" alt="element-2" class="absolute -z-10 top-0 right-0">
                     </div>
                     <!-- single item -->
-                    <div class="col-span-6 bg-join_user_bg bg-100% bg-no-repeat bg-primary rounded-3xl flex xl:flex-row flex-row-reverse items-center relative z-10 overflow-hidden !pr-5 xl:pl-0 pl-6">
+                    <div class="sm:col-span-6 bg-join_user_bg bg-100% bg-no-repeat bg-primary rounded-3xl flex xl:flex-row flex-row-reverse items-center relative z-10 overflow-hidden !pr-5 xl:pl-0 pl-6">
                         <!-- main image -->
                         <div class="w-4/6 xl:mb-0 -mb-6 lg:block hidden">
                             <img src="assets/images/join-us/img-2.png" alt="student" class="w-full">
                         </div>
-                        <div class="text-white py-8">
-                            <h5 class="xl:text-32 md:text-28 text-2xl font-medium font-splineSans mb-2">Become A Student</h5>
+                        <div class="text-white xl:py-8 py-5">
+                            <h5 class="xl:text-32 md:text-2xl text-22 font-medium font-splineSans mb-2">Become A Student</h5>
                             <p>Step into a world of learning and growth by becoming a student today.</p>
                             <a href="#" class="btn bg-white text-primary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
                                 <i class="ri-arrow-right-line text-inherit"></i>
                             </a>
                         </div>
                         <!-- position elements -->
-                         <img src="assets/images/join-us/element-2.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
-                         <img src="assets/images/join-us/element-4.png" alt="element-2" class="absolute -z-10 top-0 right-0">
+                            <img src="assets/images/join-us/element-2.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
+                            <img src="assets/images/join-us/element-4.png" alt="element-2" class="absolute -z-10 top-0 right-0">
                     </div>
                 </div>
             </div>
@@ -1141,7 +1234,7 @@
         <!-- Blog -->
         <div class="container lg:pt-[285px] sm:pt-[230px] pt-24">
             <!-- section header -->
-            <div class="max-w-xl">
+            <div class="max-w-xl md:text-start text-center">
                 <h2 class="section-heading relative">Latest News &
                     <span class="text-secondary">Blog
                         <img src="assets/images/icons/line-blog.png" alt="line" class="md:block hidden absolute xl:left-[18.5rem] lg:left-[15.5rem] left-48">
@@ -1150,7 +1243,7 @@
                 <p class="section-para">Stay informed with our Latest News and Blog, where we bring you the most recent updates in education, and expert insights.</p>
             </div>
             <!-- blogs -->
-             <div class="swiper blog-slider">
+                <div class="swiper blog-slider">
                 <div class="swiper-wrapper sm:mt-60 mt-30 pb-10">
                     <!-- single item -->
                     <div class="swiper-slide lg:col-span-4 sm:col-span-6 card shadow-courseCard group/blog">
@@ -1318,38 +1411,39 @@
                 <div class="blog-pagination text-center *:!size-3 *:border-[1.5px] *:border-primary *:!bg-primary"></div>
             </div>
         </div>
-        <!-- work smplify -->
-      </main>
+    </main>
      <!-- end main -->
-      <!-- footer -->
+    <!-- footer -->
     <footer>
         <div class="relative z-20">
             <!-- footer CTA -->
-             <div class="container rounded-3xl bg-primary grid sm:grid-cols-12 items-center xl:pl-28 lg:pl-20 sm:pl-8 pl-4 lg:py-16 py-8 lg:translate-y-130 sm:translate-y-44 translate-y-36 overflow-hidden">
-                <div class="sm:col-span-6 col-span-full mx-auto lg:text-32 sm:text-22 text-xl font-semibold lg:leading-10 sm:leading-9 leading-7 text-white xl:pr-28 sm:mb-0 mb-4">
-                    Stay up-to-date on educational news with our newsletter Subscription
+            <div class="container">
+                <div class="rounded-3xl bg-primary grid sm:grid-cols-12 items-center xl:pl-28 lg:pl-20 sm:pl-8 pl-4 lg:pr-0 pr-4 lg:py-16 py-8 lg:translate-y-130 sm:translate-y-36 translate-y-36 overflow-hidden">
+                    <div class="md:col-span-6 col-span-full mx-auto lg:text-32 sm:text-22 text-xl font-semibold lg:leading-10 sm:leading-9 leading-7 text-white xl:pr-28 md:mb-0 mb-4">
+                        Stay up-to-date on educational news with our newsletter Subscription
+                    </div>
+                    <div class="md:col-span-6 col-span-full">
+                        <form>
+                            <div class="relative bg-white rounded-full inline-block">
+                                <input type="email" placeholder="Enter Your Email" required class="w-full pl-30 sm:pr-40 pr-40 py-5 placeholder:text-gray-800 rounded-full focus:outline-none">
+                                <button type="submit" class="btn bg-secondary hover:bg-secondary hover:bg-opacity-90 hover:text-white hover:border-secondary gap-2 position-y-center right-2">
+                                    Subscribe
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <p class="text-white mt-5 xl:pr-36 lg:pr-20">Subscribe to get the latest news on conversation design. By submitting this privacy policy.</p>
+                    </div>
+                    <!-- position item -->
+                    <img src="assets/images/footer/vector-left-top.png" alt="bag" class="absolute left-5 top-0 mix-blend-soft-light -z-10 sm:block hidden">
+                    <img src="assets/images/footer/vector-pen.png" alt="bag" class="absolute right-5 top-0 mix-blend-soft-light -z-10 lg:block hidden">
+                    <img src="assets/images/footer/vector-plane.png" alt="bag" class="absolute left-[35rem] bottom-0 mix-blend-soft-light -z-10">
+                    <img src="assets/images/footer/element-top.png" alt="bag" class="absolute left-[27rem] top-0 -z-10 lg:block hidden">
+                    <img src="assets/images/footer/vector-right-bottom.png" alt="bag" class="absolute right-0 bottom-0 -z-10 lg:block hidden">
                 </div>
-                <div class="sm:col-span-6 col-span-full">
-                    <form>
-                        <label class="relative bg-white rounded-full">
-                            <input type="email" placeholder="Enter Your Email" required class="sm:w-5/6 w-full pl-30 sm:pr-44 pr-40 py-5 placeholder:text-gray-800 rounded-full focus:outline-none">
-                            <button type="submit" class="btn bg-secondary hover:bg-secondary hover:bg-opacity-90 hover:text-white hover:border-secondary gap-2 position-y-center right-2">
-                                Subscribe
-                                <i class="ri-arrow-right-line"></i>
-                            </button>
-                        </label>
-                    </form>
-                    <p class="text-white mt-5 xl:pr-36 lg:pr-20">Subscribe to get the latest news on conversation design. By submitting this privacy policy.</p>
-                </div>
-                <!-- position item -->
-                <img src="assets/images/footer/vector-left-top.png" alt="bag" class="absolute left-5 top-0 mix-blend-soft-light -z-10 sm:block hidden">
-                <img src="assets/images/footer/vector-pen.png" alt="bag" class="absolute right-5 top-0 mix-blend-soft-light -z-10 lg:block hidden">
-                <img src="assets/images/footer/vector-plane.png" alt="bag" class="absolute left-[35rem] bottom-0 mix-blend-soft-light -z-10">
-                <img src="assets/images/footer/element-top.png" alt="bag" class="absolute left-[27rem] top-0 -z-10 lg:block hidden">
-                <img src="assets/images/footer/vector-right-bottom.png" alt="bag" class="absolute right-0 bottom-0 -z-10 lg:block hidden">
-             </div>
+            </div>
             <!-- footer body -->
-            <div class="bg-[#090927] sm:pt-64 pt-48 sm:pb-130 pb-24">
+            <div class="bg-[#090927] lg:pt-64 pt-48 lg:pb-130 pb-24">
                 <div class="container sm:grid grid-cols-12 lg:gap-5 md:gap-10 sm:gap-5 sm:space-y-0 space-y-10">
                     <div class="lg:col-span-3 sm:col-span-6 col-span-full">
                         <img src="assets/images/logo/dark-logo.svg" alt="logo">
