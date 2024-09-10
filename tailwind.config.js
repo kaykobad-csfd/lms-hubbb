@@ -55,6 +55,8 @@ module.exports = {
           cta_section: "url(../images/cta/cta-bg.png)",
           join_section: "url(../images/join-us/join-bg.png)",
           join_user_bg: "url(../images/join-us/user-bg.png)",
+          inner_hero: "url(../images/hero/inner-hero-bg.png)",
+          course_detail_hero: "url(../images/hero/course-detail-hero-bg.png)",
         },
         backgroundSize:{
           "100%": "100% 100%",
