@@ -10,6 +10,56 @@
     searchInput.classList.toggle('invisible');
     searchInput.classList.toggle('translate-y-5');
   }
+// course grid
+const gridBtn = document.querySelector('.grid-btn');
+const colBtn = document.querySelector('.col-btn');
+const courseItems = document.querySelectorAll('.course-item');
+const courseGridThumb = document.querySelectorAll('.course-grid-thumb');
+const courseGridThumbImg = document.querySelectorAll('.course-grid-thumb-img');
+
+// instructor grid
+const instructorVOne = document.querySelectorAll('.instructorVOne');
+const instructorVTwo = document.querySelectorAll('.instructorVTwo');
+
+function toggleView(isGridView) {
+    gridBtn.classList.toggle('!bg-primary', isGridView);
+    gridBtn.classList.toggle('!text-white', isGridView);
+    colBtn.classList.toggle('!bg-primary', !isGridView);
+    colBtn.classList.toggle('!text-white', !isGridView);
+
+    courseItems.forEach(item => {
+        item.classList.toggle('!col-span-full', !isGridView);
+        item.classList.toggle('lg:!p-6', !isGridView);
+        item.classList.toggle('lg:flex', !isGridView);
+    });
+    courseGridThumb.forEach(thumb => {
+        thumb.classList.toggle('lg:rounded-2xl', !isGridView);
+    });
+    courseGridThumbImg.forEach(img => {
+        img.classList.toggle('lg:h-full', !isGridView);
+        img.classList.toggle('lg:object-cover', !isGridView);
+    });
+
+    // instructor grid
+    instructorVOne.forEach(item => {
+        item.classList.toggle('grid', isGridView);
+        item.classList.toggle('hidden', !isGridView);
+    });
+    instructorVTwo.forEach(item => {
+        item.classList.toggle('hidden', isGridView);
+        item.classList.toggle('grid', !isGridView);
+    });
+}
+
+function toggleGrid() {
+    toggleView(true);
+}
+
+function toggleCol() {
+    toggleView(false);
+}
+
+
   
   /* toggle Drawer */
   var mobileNav = document.getElementById('mobile-nav');
