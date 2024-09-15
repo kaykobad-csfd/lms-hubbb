@@ -65,11 +65,11 @@
         </div>
     </div>
     <!-- header -->
-    <header class="relative font-splineSans py-6 px-4">
-        <nav>
+    <header class="relative sm:min-h-[104px] min-h-[90px] z-[9999]">
+        <nav id="sticky-navbar" class="font-splineSans py-6 px-4 w-full top-0 duration-200 ease-in-out z-50">
             <div class="flex-between-center max-w-[1734px] mx-auto">
                 <!-- logo -->
-                <a href="#">
+                <a href="index.html">
                     <img src="assets/images/logo/logo-text.svg" alt="logo" class="sm:w-full w-3/4">
                 </a>
                 <!-- select and search -->
@@ -125,22 +125,28 @@
                                     <a href="course-bundle.html" class="list-item hover:text-primary duration-200">Course Bundle</a>
                                 </li>
                                 <li>
+                                    <a href="course-video.html" class="list-item hover:text-primary duration-200">Course Video</a>
+                                </li>
+                                <li>
+                                    <a href="checkout.html" class="list-item hover:text-primary duration-200">Checkout</a>
+                                </li>
+                                <li>
                                     <a href="instructor.html" class="list-item hover:text-primary duration-200">Instructor</a>
                                 </li>
                                 <li>
                                     <a href="instructor-profile.html" class="list-item hover:text-primary duration-200">Instructor Profile</a>
                                 </li>
                                 <li>
-                                    <a href="blog-detail.html" class="list-item hover:text-primary duration-200">Blog Detail</a>
-                                </li>
-                                <li>
-                                    <a href="course-video.html" class="list-item hover:text-primary duration-200">Course Video</a>
-                                </li>
-                                <li>
-                                    <a href="organization.html" class="list-item hover:text-primary duration-200">Course Organization</a>
+                                    <a href="organization.html" class="list-item hover:text-primary duration-200">Organization</a>
                                 </li>
                                 <li>
                                     <a href="organization-detail.html" class="list-item hover:text-primary duration-200">Organization Detail</a>
+                                </li>
+                                <li>
+                                    <a href="blog-detail.html" class="list-item hover:text-primary duration-200">Blog Detail</a>
+                                </li>
+                                <li>
+                                    <a href="support.html" class="list-item hover:text-primary duration-200">Support</a>
                                 </li>
                             </ul>
                         </li>
@@ -154,8 +160,9 @@
                  </div>
                  <!-- nav right -->
                   <div class="flex items-center gap-5">
+                    <!-- cart -->
                     <a href="cart.html" class="relative">
-                        <i class="ri-shopping-cart-2-line text-inherit"></i>
+                        <i class="ri-shopping-cart-2-line text-inherit text-xl"></i>
                         <div class="absolute -top-1 -right-2 bg-secondary flex-center size-4 text-white text-xs rounded-full">0</div>
                     </a>
                     <span class="w-px h-30 bg-[#D0D2D4]"></span>
@@ -179,7 +186,7 @@
         <div id="mobile-nav" class="fixed z-[99999] top-0 left-0 sm:w-3/6 w-5/6 h-screen -translate-x-[500px] bg-white flex flex-col duration-500 lg:hidden">
             <!-- drawer top -->
             <div class="flex-between-center p-3 shadow-sm">
-                <a href="#" class="w-3/6">
+                <a href="index.html" class="w-3/6">
                     <img src="assets/images/logo/logo-text.svg" alt="logo" class="w-full">
                 </a>
                 <button onclick="toggleMobileNav()" class="size-10 flex-center text-xl rounded-xl border hover:border-transparent hover:bg-primary hover:text-white duration-200">
@@ -205,22 +212,28 @@
                                 <a href="course-bundle.html" class="py-1.5 list-item hover:text-primary duration-200">Course Bundle</a>
                             </li>
                             <li>
+                                <a href="course-video.html" class="py-1.5 list-item hover:text-primary duration-200">Course Video</a>
+                            </li>
+                            <li>
+                                <a href="checkout.html" class="py-1.5 list-item hover:text-primary duration-200">Checkout</a>
+                            </li>
+                            <li>
                                 <a href="instructor.html" class="py-1.5 list-item hover:text-primary duration-200">Instructor</a>
                             </li>
                             <li>
                                 <a href="instructor-profile.html" class="py-1.5 list-item hover:text-primary duration-200">Instructor Profile</a>
                             </li>
                             <li>
-                                <a href="blog-detail.html" class="py-1.5 list-item hover:text-primary duration-200">Blog Detail</a>
-                            </li>
-                            <li>
-                                <a href="course-video.html" class="py-1.5 list-item hover:text-primary duration-200">Course Video</a>
-                            </li>
-                            <li>
                                 <a href="organization.html" class="py-1.5 list-item hover:text-primary duration-200">Course Organization</a>
                             </li>
                             <li>
                                 <a href="organization-detail.html" class="py-1.5 list-item hover:text-primary duration-200">Organization Detail</a>
+                            </li>
+                            <li>
+                                <a href="blog-detail.html" class="py-1.5 list-item hover:text-primary duration-200">Blog Detail</a>
+                            </li>
+                            <li>
+                                <a href="support.html" class="py-1.5 list-item hover:text-primary duration-200">Support</a>
                             </li>
                         </ul>
                     </li>
@@ -236,13 +249,13 @@
             <div class="mt-auto p-3">
                 <div class="grid grid-cols-3 gap-2 mb-5">
                     <div class="overflow-hidden rounded-md">
-                        <img src="assets/images/top-courses/image-1.png" alt="" class="hover:scale-110 duration-200">
+                        <img src="assets/images/top-courses/image-1.png" alt="lms-hub" class="hover:scale-110 duration-200">
                     </div>
                     <div class="overflow-hidden rounded-md">
-                        <img src="assets/images/top-courses/image-2.png" alt="" class="hover:scale-110 duration-200">
+                        <img src="assets/images/top-courses/image-2.png" alt="lms-hub" class="hover:scale-110 duration-200">
                     </div>
                     <div class="overflow-hidden rounded-md">
-                        <img src="assets/images/top-courses/image-3.png" alt="" class="hover:scale-110 duration-200">
+                        <img src="assets/images/top-courses/image-3.png" alt="lms-hub" class="hover:scale-110 duration-200">
                     </div>
                 </div>
                 <h3 class="font-bold text-lg mb-2">Explore Our <span class="text-secondary">Courses</span></h3>
@@ -250,7 +263,7 @@
             </div>
         </div>
         <!-- overlay -->
-        <div onclick="toggleMobileNav()" id="mobile-nav-overlay" class="fixed z-50 top-0 w-full h-screen bg-black opacity-0 invisible duration-300 lg:hidden"></div>
+        <div onclick="toggleMobileNav()" id="mobile-nav-overlay" class="fixed z-[9999] top-0 w-full h-screen bg-black opacity-0 invisible duration-300 lg:hidden"></div>
     </div>
      <!-- start main -->
     <main>
@@ -266,7 +279,7 @@
                         Life Never Stops Teaching
                     </h1>
                     <p class="xl:pr-56 lg:pr-16">In every moment, life presents new lessons, challenges, opportunities for growth. Embrace continuous learning your wisdom.</p>
-                    <a href="#" class="btn gap-2 lg:mt-8 mt-4">Browse Our Course 
+                    <a href="courses.html" class="btn gap-2 lg:mt-8 mt-4">Browse Our Course 
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
@@ -530,12 +543,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Full-Stack Web Development Bootcamp</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -575,12 +588,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Modern JavaScript & ES6+ Essentials</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -620,12 +633,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Responsive Web Design Masterclass</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -665,12 +678,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Introduction to Front-End Development</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -710,12 +723,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Python for Web Development with Django</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -755,12 +768,12 @@
                                 <i class="ri-star-half-fill text-inherit"></i>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="course-detail.html">
                             <h3 class="course-title">Advanced CSS & SASS Idea Techniques business</h3>
                         </a>
                         <!-- card footer -->
                         <div class="flex-between-center border-t border-gray-300 xl:pt-5 pt-3.5 xl:mt-5 mt-3.5">
-                            <a href="#" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
+                            <a href="instructor-profile.html" class="flex items-center gap-2 text-heading hover:text-primary duration-200">
                                 <img src="assets/images/top-courses/instructor.png" alt="LMS-HUB" class="rounded-full">
                                 <span class="xl:text-base text-sm font-medium">Leslie Alexander</span>
                             </a>
@@ -849,7 +862,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Marvin McKinney</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Web Designer</span>
@@ -885,7 +898,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Jane Cooper</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Marketer</span>
@@ -921,7 +934,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Darrell Steward</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Web Designer</span>
@@ -957,7 +970,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Jane Cooper</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Marketer</span>
@@ -993,7 +1006,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Darrell Steward</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Web Designer</span>
@@ -1029,7 +1042,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Jane Cooper</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Marketer</span>
@@ -1065,7 +1078,7 @@
                                     </ul>
                                 </div>
                                 <div class="text-center bg-primary py-3 rounded-2xl w-4/6 position-x-center bottom-6">
-                                    <a href="#">
+                                    <a href="instructor-profile.html">
                                         <h4 class="team-title">Darrell Steward</h4>
                                     </a>
                                     <span class="text-gray-300 xl:text-base text-sm">Web Designer</span>
@@ -1144,7 +1157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn gap-2 xl:mt-8 mt-4">View All - FAQ
+                        <a href="support.html" class="btn gap-2 xl:mt-8 mt-4">View All - FAQ
                             <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
@@ -1203,13 +1216,13 @@
                         <div class="text-white xl:py-8 py-5">
                             <h5 class="xl:text-32 md:text-2xl text-22 font-medium font-splineSans mb-2">Become A Instructors</h5>
                             <p>Elevate your learning experience by training with industry knowledge.</p>
-                            <a href="#" class="btn bg-white text-secondary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
+                            <a href="support.html" class="btn bg-white text-secondary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
                                 <i class="ri-arrow-right-line text-inherit"></i>
                             </a>
                         </div>
                         <!-- position elements -->
-                            <img src="assets/images/join-us/element-1.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
-                            <img src="assets/images/join-us/element-3.png" alt="element-2" class="absolute -z-10 top-0 right-0">
+                        <img src="assets/images/join-us/element-1.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
+                        <img src="assets/images/join-us/element-3.png" alt="element-2" class="absolute -z-10 top-0 right-0">
                     </div>
                     <!-- single item -->
                     <div class="sm:col-span-6 bg-join_user_bg bg-100% bg-no-repeat bg-primary rounded-3xl flex xl:flex-row flex-row-reverse items-center relative z-10 overflow-hidden !pr-5 xl:pl-0 pl-6">
@@ -1220,13 +1233,13 @@
                         <div class="text-white xl:py-8 py-5">
                             <h5 class="xl:text-32 md:text-2xl text-22 font-medium font-splineSans mb-2">Become A Student</h5>
                             <p>Step into a world of learning and growth by becoming a student today.</p>
-                            <a href="#" class="btn bg-white text-primary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
+                            <a href="support.html" class="btn bg-white text-primary hover:text-white hover:border-white gap-2 xl:mt-8 mt-4">Start Now
                                 <i class="ri-arrow-right-line text-inherit"></i>
                             </a>
                         </div>
                         <!-- position elements -->
-                            <img src="assets/images/join-us/element-2.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
-                            <img src="assets/images/join-us/element-4.png" alt="element-2" class="absolute -z-10 top-0 right-0">
+                        <img src="assets/images/join-us/element-2.png" alt="element-1" class="absolute -z-10 left-0 bottom-0 xl:block hidden">
+                        <img src="assets/images/join-us/element-4.png" alt="element-2" class="absolute -z-10 top-0 right-0">
                     </div>
                 </div>
             </div>
@@ -1264,10 +1277,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">Top 10 Courses to Boost Your Best Career in 2024</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1276,7 +1289,7 @@
                     <div class="swiper-slide lg:col-span-4 sm:col-span-6 card shadow-courseCard group/blog">
                         <!-- card thumbnail -->
                         <div class="blog-thumb">
-                            <img src="assets/images/blog/blog-2.png" alt="" class="group-hover/blog:scale-110 duration-200">
+                            <img src="assets/images/blog/blog-2.png" alt="LMS-hub" class="group-hover/blog:scale-110 duration-200">
                         </div>
                         <!-- card body -->
                         <div class="sm:p-6 p-4">
@@ -1291,10 +1304,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">The Power of Lifelong Learning, Never Stop Growing</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1303,7 +1316,7 @@
                     <div class="swiper-slide lg:col-span-4 sm:col-span-6 card shadow-courseCard group/blog">
                         <!-- card thumbnail -->
                         <div class="blog-thumb">
-                            <img src="assets/images/blog/blog-3.png" alt="" class="group-hover/blog:scale-110 duration-200">
+                            <img src="assets/images/blog/blog-3.png" alt="LMS-hub" class="group-hover/blog:scale-110 duration-200">
                         </div>
                         <!-- card body -->
                         <div class="sm:p-6 p-4">
@@ -1318,10 +1331,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">How to Choose the Right Course for Your Goals</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1345,10 +1358,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">Top 10 Courses to Boost Your Best Career in 2024</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1357,7 +1370,7 @@
                     <div class="swiper-slide lg:col-span-4 sm:col-span-6 card shadow-courseCard group/blog">
                         <!-- card thumbnail -->
                         <div class="blog-thumb">
-                            <img src="assets/images/blog/blog-2.png" alt="" class="group-hover/blog:scale-110 duration-200">
+                            <img src="assets/images/blog/blog-2.png" alt="LMS-hub" class="group-hover/blog:scale-110 duration-200">
                         </div>
                         <!-- card body -->
                         <div class="sm:p-6 p-4">
@@ -1372,10 +1385,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">The Power of Lifelong Learning, Never Stop Growing</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1384,7 +1397,7 @@
                     <div class="swiper-slide lg:col-span-4 sm:col-span-6 card shadow-courseCard group/blog">
                         <!-- card thumbnail -->
                         <div class="blog-thumb">
-                            <img src="assets/images/blog/blog-3.png" alt="" class="group-hover/blog:scale-110 duration-200">
+                            <img src="assets/images/blog/blog-3.png" alt="LMS-hub" class="group-hover/blog:scale-110 duration-200">
                         </div>
                         <!-- card body -->
                         <div class="sm:p-6 p-4">
@@ -1399,10 +1412,10 @@
                                 </div>
                             </div>
                             <!-- title -->
-                            <a href="#">
+                            <a href="blog-detail.html">
                                 <h4 class="blog-title">How to Choose the Right Course for Your Goals</h4>
                             </a>
-                            <a href="#" class="btn strock gap-2 lg:mt-8 mt-4">Read More
+                            <a href="blog-detail.html" class="btn strock gap-2 lg:mt-8 mt-4">Read More
                                 <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
@@ -1476,19 +1489,22 @@
                         <h5 class="text-xl font-semibold text-white mb-6">Useful links</h5>
                         <ul class="text-gray-100 space-y-3">
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Home</a>
+                                <a href="index.html" class="hover:text-gray-200 duration-200">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Courses</a>
+                                <a href="courses.html" class="hover:text-gray-200 duration-200">Courses</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Instructors</a>
+                                <a href="instructor.html" class="hover:text-gray-200 duration-200">Instructors</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Blog</a>
+                                <a href="blog.html" class="hover:text-gray-200 duration-200">Blog</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Contact</a>
+                                <a href="contact.html" class="hover:text-gray-200 duration-200">Contact</a>
+                            </li>
+                            <li>
+                                <a href="support.html" class="hover:text-gray-200 duration-200">Support</a>
                             </li>
                         </ul>
                     </div>
@@ -1505,7 +1521,7 @@
                                 <a href="#" class="hover:text-gray-200 duration-200">Trams & Condition</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">Category Course</a>
+                                <a href="courses.html" class="hover:text-gray-200 duration-200">Category Course</a>
                             </li>
                             <li>
                                 <a href="#" class="hover:text-gray-200 duration-200">Sign Up</a>
@@ -1516,13 +1532,13 @@
                         <h5 class="text-xl font-semibold text-white mb-6">Get In Contact</h5>
                         <ul class="text-gray-100 space-y-3">
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">(406) 123 4789</a>
+                                <a href="https://wa.me/1234789" class="hover:text-gray-200 duration-200" target="_blank">(406) 123 4789</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">info@gmail.com</a>
+                                <a href="mailto:info@gamil.com" class="hover:text-gray-200 duration-200">info@gmail.com</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-200 duration-200">2972 Westheimer Rd. Santa Ana, Illinois 85486 </a>
+                                <a href="https://maps.app.goo.gl/ujAaDxPhD2jHdAaG7" class="hover:text-gray-200 duration-200" target="_blank">2972 Westheimer Rd. Santa Ana, Illinois 85486 </a>
                             </li>
                         </ul>
                     </div>
