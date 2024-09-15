@@ -1,3 +1,4 @@
+
 /* toggle search */
   var searchIcon = document.getElementById('searchIcon');
   var closeIcon = document.getElementById('closeIcon');
@@ -199,3 +200,38 @@ document.querySelectorAll('.accordion').forEach(accordion => {
     },
     
   });
+
+  // Video Play
+document.addEventListener('DOMContentLoaded', () => {
+  const videoWrapper = document.querySelector('.video-wrapper');
+  const videoContainer = videoWrapper.querySelector('.video-container');
+
+  // Add click event listener to all buttons with class 'play-video'
+  document.querySelectorAll('.play-video').forEach(button => {
+    button.addEventListener('click', () => {
+      videoWrapper.classList.remove('invisible');
+      videoContainer.classList.remove('scale-0');
+      videoWrapper.classList.add('opacity-100');
+    });
+  });
+
+  // Add event listener to close the video modal when clicking outside of the video
+  videoWrapper.addEventListener('click', event => {
+    if (event.target === videoWrapper) {
+      videoWrapper.classList.add('invisible');
+      videoContainer.classList.add('scale-0');
+    }
+  });
+});
+
+    // Sticky Navigation Bar
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('sticky-navbar');
+      const navHeight = nav.offsetHeight;
+  
+      if (window.scrollY > navHeight + 200) {
+        nav.classList.add('fixed_top');
+      } else if (window.scrollY < navHeight) {
+        nav.classList.remove('fixed_top');
+      }
+    });
